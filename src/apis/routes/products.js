@@ -18,6 +18,17 @@ router.post("/", (req, res) => {
     });
 });
 
+router.put('/', (req, res) => {
+    const product = {
+        productId: req.body.productId,
+        name: req.body.name
+    };
+    res.status(200).json({
+        message: "Product was updated",
+        updatedProduct: product
+    });
+})
+
 router.get("/:productId", (req, res) => {
     res.status(200).json({
         message: "Product details",
