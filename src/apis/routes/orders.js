@@ -19,6 +19,18 @@ router.post("/", (req, res) => {
     });
 });
 
+router.put("/", (req, res) => {
+    const order = {
+        orderId: req.body.orderId,
+        productId: req.body.productId,
+        quantity: req.body.quantity
+    };
+    res.status(200).json({
+        message: "Order was updated",
+        updatedOrder: order
+    });
+});
+
 router.get("/:orderId", (req, res) => {
     res.status(200).json({
         message: "Order details",
